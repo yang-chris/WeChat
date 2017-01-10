@@ -19,7 +19,7 @@ Page({
         } else {
             var postsCollected = {};
             postsCollected[postId] = false;
-            wx.setStorageSync('post_collected', postsCollected);
+            wx.setStorageSync('posts_collected', postsCollected);
         }
     },
 
