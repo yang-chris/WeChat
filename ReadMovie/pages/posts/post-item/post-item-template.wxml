@@ -1,0 +1,17 @@
+<template name="postItem">
+    <view class="article">
+            <view class="article-logo">
+                <image src="{{img.dateImg}}"></image>
+                <text>{{date}}</text>
+            </view>
+            <text class="article-title">{{title}}</text>
+            <image class="article-img" src="{{img.articleImg}}"></image>
+            <text class="article-content">{{articleContent}}</text>
+            <view class="article-coll">
+                <image class="collect-img" src="/images/collection.png"></image>
+                <text>{{collection}}</text>
+                <image class="collect-img" src="/images/comment.png"></image>
+                <text>{{comment}}</text>
+            </view>
+        </view>
+</template>

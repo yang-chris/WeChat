@@ -1,0 +1,24 @@
+<view class="container">
+  <view class="detail-img">
+    <image class="head-img" src="{{img.articleImg}}"></image>
+    <image class="music-img" src="/images/music/music-start.png"></image>
+  </view>
+  <view class="content-author">
+    <image class="avatar" src="/images/avatar/1.png"></image>
+    <text class="author">{{author}}</text>
+    <text class="content-text">发表于</text>
+    <text class="date">{{dateTime}}</text>
+  </view>
+  <text class="content-title">{{title}}</text>
+  <view class="tool">
+    <view class="horizon"></view>
+    <view class="circle-img">
+      <image wx:if="{{collected}}" catchtap="onCollectionTap" class="collection" src="/images/icon/collection.png"></image>
+      <image wx:else class="collection" catchtap="onCollectionTap" src="/images/icon/collection-anti.png"></image>
+      <image class="share" src="/images/icon/share.png"></image>
+    </view>
+  </view>
+  <view class="content">
+    <text>{{detaileArticle}}</text>
+  </view>
+</view>
