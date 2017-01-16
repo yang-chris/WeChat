@@ -7,3 +7,10 @@ swiper image{
     width: 100%;
     height: 480rpx;
 }
+.wx-swiper-dot::before{
+    color: white;
+    font-size: 30px;
+}
+.wx-swiper-dot-active::before{
+    color: #000; 
+}

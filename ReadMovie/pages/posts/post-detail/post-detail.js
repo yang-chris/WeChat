@@ -1,7 +1,8 @@
 var postData = require('../../../data/postData.js');
+var app = getApp();
 Page({
     data: {
-
+        isPlayingMusic: false,
     },
     onLoad: function (options) {
         var postId = options.id;
@@ -22,7 +23,7 @@ Page({
             wx.setStorageSync('posts_collected', postsCollected);
         }
     },
-
+    // 收藏按钮
     onCollectionTap: function (event) {
         var postsCollected = wx.getStorageSync('posts_collected');
         var postCollected = postsCollected[this.data.currentPostId];
@@ -34,5 +35,37 @@ Page({
         this.setData({
             collected: postCollected
         })
+
+        wx.showToast({
+            title: postCollected ? "收藏成功" : "取消收藏",
+            icon: 'success',
+            duration: 2000
+        })
+    },
+
+    //音乐
+    onMusicTap: function (event) {
+        var currentPostId = this.data.currentPostId;
+        var postDataItem = postData.postList.article[currentPostId];
+        var isPlayingMusic = this.data.isPlayingMusic;
+        console.log(postDataItem.music.url);
+        if (isPlayingMusic) {
+            wx.pauseBackgroundAudio();
+            this.setData({
+                isPlayingMusic: false
+            })
+        } else {
+            wx.playBackgroundAudio({
+                dataUrl: postDataItem.music.url,
+                title: postDataItem.music.title,
+                covrImgUrl: postDataItem.music.coverImg,
+            })
+            this.setData({
+                isPlayingMusic: true
+            })
+            app.globalData.g_currentMusicPostId = this.data.currentPostId;
+            app.globalData.g_isPlayingMusic = true;
+        }
+
     }
 })

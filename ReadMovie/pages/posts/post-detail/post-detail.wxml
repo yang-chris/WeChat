@@ -1,7 +1,7 @@
 <view class="container">
   <view class="detail-img">
     <image class="head-img" src="{{img.articleImg}}"></image>
-    <image class="music-img" src="/images/music/music-start.png"></image>
+    <image class="music-img" catchtap="onMusicTap" src="{{isPlayingMusic?'/images/music/music-stop.png':'/images/music/music-start.png'}}"></image>
   </view>
   <view class="content-author">
     <image class="avatar" src="/images/avatar/1.png"></image>

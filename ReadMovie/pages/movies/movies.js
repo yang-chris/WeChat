@@ -1,4 +1,4 @@
-// pags/posts/posts.js
+// pages/movies/movies.js
 Page({
   data:{},
   onLoad:function(options){

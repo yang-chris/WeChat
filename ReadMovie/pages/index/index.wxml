@@ -2,7 +2,7 @@
 <view class="container">
   <image class="welcomeImg" src="/images/welcome.png"></image>
   <text class="welcome">hello world,welcome</text>
-  <view class="moto-container" bindtap="onTap">
+  <view class="moto-container" catchtap="onTap">
     <text class="start">开启小程序之旅</text>
   </view>
 </view>
