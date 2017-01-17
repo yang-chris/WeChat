@@ -1,10 +1,13 @@
 <!--pages/movies/movies.wxml-->
-<text>电影</text>
 <import src="movie-list/movie-list-template.wxml" />
-<text>电影</text>
-<view>
-<text>diany</text>
-    <template is="movieListTemplate" />
-    <template is="movieListTemplate" />
-    <template is="movieListTemplate" />
+<view class="container">
+    <view class="movies-template">
+        <template is="movieListTemplate" />
+    </view>
+    <view class="movies-template">
+        <template is="movieListTemplate" />
+    </view>
+    <view class="movies-template">
+        <template is="movieListTemplate" />
+    </view>
 </view>

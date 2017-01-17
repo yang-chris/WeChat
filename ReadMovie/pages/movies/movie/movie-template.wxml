@@ -1,8 +1,8 @@
 <import src="../stars/stars-template.wxml" />
 <template name="moviesTemplate">
-    <view>
-        <image src="/images/xiadao.jpg"></image>
-        <text>侠盗一号</text>
+    <view class="movie-container">
+        <image class="movie-img" src="/images/xiadao.jpg"></image>
+        <text class="movie-title">侠盗一号</text>
         <template is="starsTemplate"/>
     </view>
 </template>
