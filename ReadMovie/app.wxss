@@ -3,4 +3,5 @@
   font-family: "MicroSoft Yahei";
   width: 100%;
   font-size: 24rpx;
+  color: #666;
 } 
