@@ -22,7 +22,13 @@ Page({
     this.getMovieListData(comingSoonUrl, "comingSoon", "即将上映");
     this.getMovieListData(top250Url, "top250", "豆瓣Top250");
   },
-  getMovieListData: function (url,settedKey) {
+  onMoreTap:function(event){
+    var category=event.currentTarget.dataset.category;
+    wx.navigateTo({
+      url: 'more-movie/more-movie?category='+category,
+    })
+  },
+  getMovieListData: function (url,settedKey,categoryTitle) {
     var that = this;
     wx.request({
       url: url,
@@ -31,7 +37,7 @@ Page({
         "Content-Type": "json"
       }, // 设置请求的 header
       success: function (res) {
-        that.processDoubanData(res.data,settedKey);
+        that.processDoubanData(res.data,settedKey,categoryTitle);
         console.log(res);
       },
       fail: function (err) {
@@ -39,7 +45,7 @@ Page({
       }
     })
   },
-  processDoubanData: function (moviesDouban,settedKey) {
+  processDoubanData: function (moviesDouban,settedKey,categoryTitle) {
     var movies = [];
     for (var idx in moviesDouban.subjects) {
       var subject = moviesDouban.subjects[idx];
@@ -58,6 +64,7 @@ Page({
     }
     var readyData={};
     readyData[settedKey]={
+      categoryTitle:categoryTitle,
       movies:movies
     };
     this.setData(readyData);
